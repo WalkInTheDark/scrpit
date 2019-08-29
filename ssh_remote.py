@@ -18,7 +18,7 @@ class Remote():
         try:
             std_in, std_out, std_err = ssh_client.exec_command(cmd)
             for line in std_out:
-                print line.strip("\n")
+                print('\033[32m{0}\033[0m'.format(line.strip("\n")))
             ssh_client.close()
         except Exception, e:
             print e
